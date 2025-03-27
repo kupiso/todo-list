@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Show-case-system</title>
+  <title>To-do-list</title>
   
   <!-- Font Awesome -->
   <link
@@ -80,8 +80,8 @@
           <h2 id="modalTitle">Add Task</h2>
           <form id="taskForm">
             <!-- Hidden field to store the task ID when editing -->
-            <input type="hidden" id="taskId" value="">
-            
+            <!-- <input type="hidden" id="taskId" value="">
+             -->
             <div class="form-group">
               <label>Title:</label>
               <input type="text" id="taskTitle" placeholder="e.g. Study" required>
@@ -123,35 +123,26 @@
       <section class="tasks-row">
         <div class="tasks-wrapper" id="taskList">
           <!-- Dynamic tasks will be injected here -->
-          <div class="add-task" onclick="showTaskForm()">Add new task</div>
         </div>
         <div class="right-panel">
-          <div class="calendar-box">
+          <div class="Annoucements">
             <header>
-              <h3>February 2023</h3>
-              <i class="fas fa-cog"></i>
+              <h3>Today's activities</h3>
+              
             </header>
             <div class="calendar-body">
               <!-- Calendar UI goes here -->
             </div>
           </div>
-          <div class="task-categories">
-            <p>Today's task</p>
-            <p>Important task</p>
-            <p>Completed tasks</p>
-          </div>
+          
         </div>
       </section>
 
       <!-- FOOTER -->
       <footer>
         <div class="footer-content">
-          <p>© 2024   Trial coding skill for task Management System</p>
-          <div class="footer-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Contact Support</a>
-          </div>
+          <p>© 2024  logic derived form argumented reality</p>
+          
         </div>
       </footer>
       <!-- END FOOTER -->

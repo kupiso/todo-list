@@ -80,7 +80,7 @@ main {
 
 /* Button Styles */
 .header button {
-  background: linear-gradient(90deg, #c59df3, #bcb8eb);
+  background: black;
   color: #fff;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -144,7 +144,7 @@ main {
   justify-content: space-between;
 }
 .complete-btn {
-  background: linear-gradient(90deg, #c59df3, #bcb8eb);
+  background: black;
   color: #fff;
   border: none;
   padding: 8px 16px;
@@ -235,6 +235,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color:white;
 }
 footer {
   background: linear-gradient(90deg, #c59df3, #bcb8eb);

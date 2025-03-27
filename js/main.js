@@ -178,10 +178,9 @@ function renderTask(task) {
       <button class="complete-btn" onclick="completeTask(${task.id})">Complete</button>
       <!-- Icon group: Share, Favorite, Delete, Edit -->
       <div class="icon-group">
-        <button class="icon-btn" title="Share"><i class="fa-solid fa-link"></i></button>
-        <button class="icon-btn" title="Favorite"><i class="fa-solid fa-star"></i></button>
+      
         <button class="icon-btn" title="Delete" onclick="deleteTask(${task.id})"><i class="fa-solid fa-trash"></i></button>
-        <button class="icon-btn" title="Edit" onclick="editTask(${task.id})"><i class="fa-solid fa-pen"></i></button>
+        
       </div>
     </div>
   `;
@@ -232,29 +231,6 @@ function completeTask(taskId) {
     });
 }
 
-// ----------------------
-// Edit Task Function - Populates the form with existing task data
-function editTask(taskId) {
-  const task = tasks.find(t => t.id === taskId);
-  if (!task) return;
-
-  // Populate the form fields with the task's data
-  document.getElementById('taskId').value = task.id;
-  document.getElementById('taskTitle').value = task.title;
-  document.getElementById('taskDate').value = task.task_date;
-  document.getElementById('taskDescription').value = task.description;
-  document.getElementById('taskCategory').value = task.category;
-  
-  // Set the priority radio button
-  const radios = document.querySelectorAll('input[name="priority"]');
-  radios.forEach(radio => {
-    radio.checked = (radio.value === task.priority);
-  });
-
-  // Change modal title to indicate editing
-  document.getElementById('modalTitle').textContent = 'Edit Task';
-  showTaskForm();
-}
 
 // ----------------------
 // Refresh Tasks - Fetch and re-render tasks from the server
