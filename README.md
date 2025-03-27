@@ -2,7 +2,13 @@ Here's a simple and updated README for your task management system:
 
 ---
 
-# Task Management System  
+# Task Management System |Incremental development MVP
+CAN CREATE A LIST
+CAN DELETE THE LIST
+MARK AS COMPLETE
+CAN DELETE
+
+COMMING SOON SHARING AND MARK AS FAV   
 
 ## Overview  
 A simple web-based task management system that allows users to create, update, complete, and delete tasks. Tasks can be categorized and prioritized for better organization.  
