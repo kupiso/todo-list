@@ -31,3 +31,6 @@ A simple web-based task management system that allows users to create, manage, c
 **Issues & Debugging**  
 - Ensure data updates (completed status, categories) are saved correctly in the database  
 - Verify frontend displays the most recent data after refreshing
+
+**Live Demo**
+![Click Here](https://kupiso.github.io/todo-list/)
