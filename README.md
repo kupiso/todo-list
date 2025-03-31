@@ -33,4 +33,4 @@ A simple web-based task management system that allows users to create, manage, c
 - Verify frontend displays the most recent data after refreshing
 
 **Live Demo**
-![Click Here](https://kupiso.github.io/todo-list/)
+[Click Here](https://kupiso.github.io/todo-list/)
