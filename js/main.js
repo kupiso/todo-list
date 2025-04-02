@@ -1,4 +1,3 @@
-// Wait for DOM content to load
 document.addEventListener('DOMContentLoaded', () => {
   // Activate home nav link as needed
   const homeLink = document.querySelector('.nav a[href="#home"]');
@@ -134,7 +133,7 @@ document.getElementById('taskForm').addEventListener('submit', async function(e)
   try {
     if (taskId) {
       // Update existing task via PATCH
-      const response = await axios.patch(`http://localhost:3000/tasks/${taskId}`, taskData, {
+      const response = await axios.patch(`https://todo-list-nlqc.onrender.com/tasks/${taskId}`, taskData, { // Updated URL
         headers: { 'Content-Type': 'application/json' }
       });
       // Update local array and refresh UI
@@ -145,7 +144,7 @@ document.getElementById('taskForm').addEventListener('submit', async function(e)
       refreshTasks();
     } else {
       // Create new task via POST
-      const response = await axios.post('http://localhost:3000/tasks', taskData, {
+      const response = await axios.post('https://todo-list-nlqc.onrender.com/tasks', taskData, { // Updated URL
         headers: { 'Content-Type': 'application/json' }
       });
       tasks.push(response.data);
@@ -193,7 +192,7 @@ function renderTask(task) {
 // Delete Task Function (unchanged except for DOM removal)
 async function deleteTask(taskId) {
   try {
-    const response = await axios.delete(`http://localhost:3000/tasks/${taskId}`);
+    const response = await axios.delete(`https://todo-list-nlqc.onrender.com/tasks/${taskId}`); // Updated URL
     if (response.status === 200) {
       document.querySelector(`[onclick="deleteTask(${taskId})"]`).closest('.task-card').remove();
       tasks = tasks.filter(task => task.id !== taskId);
@@ -213,7 +212,7 @@ function completeTask(taskId) {
   tasks[taskIndex].completed = true;
 
   // Use PUT instead of PATCH since your server is configured for PUT
-  axios.put(`http://localhost:3000/tasks/${taskId}`, { 
+  axios.put(`https://todo-list-nlqc.onrender.com/tasks/${taskId}`, { // Updated URL
     ...tasks[taskIndex],
     completed: true
   }, {
@@ -236,7 +235,7 @@ function completeTask(taskId) {
 // Refresh Tasks - Fetch and re-render tasks from the server
 async function refreshTasks() {
   try {
-    const response = await axios.get('http://localhost:3000/tasks');
+    const response = await axios.get('https://todo-list-nlqc.onrender.com/tasks'); // Updated URL
     tasks = response.data;
     document.getElementById('taskList').innerHTML = '';
     tasks.forEach(task => {
@@ -256,6 +255,3 @@ window.onclick = function(event) {
     if (event.target.id === 'categoryModal') closeCategoryForm();
   }
 };
-
-// ----------------------
-// Optional: Activate navigation link logic remains here...
