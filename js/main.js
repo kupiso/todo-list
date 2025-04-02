@@ -230,7 +230,31 @@ function completeTask(taskId) {
     });
 }
 
+// ----------------------
+// Edit Task Function - Populates the form with existing task data
+function editTask(taskId) {
+  const task = tasks.find(t => t.id === taskId);
+  if (!task) return;
 
+  // Populate the form fields with the task's data
+  document.getElementById('taskId').value = task.id;
+  document.getElementById('taskTitle').value = task.title;
+  document.getElementById('taskDate').value = task.task_date;
+  document.getElementById('taskDescription').value = task.description;
+  document.getElementById('taskCategory').value = task.category;
+ 
+  // Set the priority radio button
+  const radios = document.querySelectorAll('input[name="priority"]');
+  radios.forEach(radio => {
+    radio.checked = (radio.value === task.priority);
+  });
+
+  // Change modal title to indicate editing
+  document.getElementById('modalTitle').textContent = 'Edit Task';
+  showTaskForm();
+}
+
+// ----------------------
 // ----------------------
 // Refresh Tasks - Fetch and re-render tasks from the server
 async function refreshTasks() {
